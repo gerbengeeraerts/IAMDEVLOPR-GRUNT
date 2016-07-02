@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -16,7 +15,7 @@ module.exports = function(grunt) {
     },
 
     compass: {
-      dist: {
+      build: {
         options: {
           sassDir: './css',
           cssDir: './deploy/css/',
@@ -31,7 +30,7 @@ module.exports = function(grunt) {
         tasks: ['styles'],
         options: {
           livereload: true,
-        },
+        }
       },
       js: {
         files: './js/**/*.js',
@@ -44,15 +43,12 @@ module.exports = function(grunt) {
 
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-beep');
 
-  // Default task(s).
-  grunt.registerTask('styles', ['compass', 'beep']);
-  grunt.registerTask('scripts', ['uglify', 'beep']);
-  //grunt.registerTask('dev', ['uglify', 'compass', 'beep:error', 'watch']);
+  grunt.registerTask('styles', ['compass']);
+  grunt.registerTask('scripts', ['uglify']);
 
 };

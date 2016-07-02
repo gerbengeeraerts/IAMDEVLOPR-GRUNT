@@ -62,10 +62,3 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
-
-/* line 3, ../../css/screen.scss */
-body {
-  background: red;
-  font-size: 1em;
-  padding: 15px;
-}
